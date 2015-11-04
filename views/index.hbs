@@ -1,13 +1,24 @@
- <ul>
+ 
       {{#each houses}}
-        <li>
-        <b>{{this.headline}} </b>
-        <i>{{this.description}} </i>
-        <small>{{this.location.city}}</small>
-        <strong>{{this.location.street}}</strong>
-        </li>
+      <a href="/crib/{{this._id}}">
+      <div class="house list">
+        <div class="headline">
+          {{this.headline}}
+          {{this._id}}
+        </div>
+
+        <div class="description">
+          {{this.description}}
+        </div>
+        <div class="city">
+          {{this.location.city}}
+        </div>
+      </div>
+      </a>
+    
+        
       {{/each}}
-    </ul>
+    
 
 
   

@@ -1,18 +1,19 @@
 body {
-  
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #000;
+    text-decoration: none;
 }
 
 .demo-layout-transparent {
-  background: url('http://www.poetscircle.gr/wp-content/uploads/2013/12/photography-artistic-wallpaperbackground-x-id.jpg') center / cover;
+    background: url('http://www.poetscircle.gr/wp-content/uploads/2013/12/photography-artistic-wallpaperbackground-x-id.jpg') center / cover;
 }
+
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
+    /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white;
+    color: white;
 }

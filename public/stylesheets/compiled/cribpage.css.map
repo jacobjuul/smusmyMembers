@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "cribpage.css",
+	"sources": [
+		"../cribpage.scss"
+	],
+	"mappings": "AAAA,YAAY,AAAC,CACT,UAAU,CAAE,MAAO,CACtB",
+	"names": []
+}
