@@ -25,8 +25,8 @@ router.get('/products', function(req, res) {
 router.route('/product/:productId?')
     .post(function(req, res) {
 
-        var product = new Product();
-        product.headline = req.body.headline;
+        var product = new Product(req.body);
+
         console.log(product);
         product.save(function(err) {
             if (err)
