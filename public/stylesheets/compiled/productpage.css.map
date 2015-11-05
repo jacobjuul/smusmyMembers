@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "cribpage.css",
+	"file": "productpage.css",
 	"sources": [
-		"../cribpage.scss"
+		"../productpage.scss"
 	],
 	"mappings": "AAAA,YAAY,AAAC,CACT,UAAU,CAAE,MAAO,CACtB",
 	"names": []
