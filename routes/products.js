@@ -4,14 +4,8 @@ var Product = require('../models/product.js');
 var bodyParser = require('body-parser');
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('front/index', {
-        title: 'Express'
-    });
-});
 
-router.get('/products', function(req, res) {
+router.get('/', function(req, res) {
     Product.find({}, function(err, products) {
         if (err)
             throw err;
@@ -22,7 +16,19 @@ router.get('/products', function(req, res) {
     });
 });
 
-router.route('/product/:productId?')
+router.route('/:productId?')
+    .get(function(req, res) {
+
+        Product.findById(req.params.productId, function(err, product) {
+            if (err)
+                throw err;
+
+            res.render('front/product', {
+                product: product
+            });
+        });
+
+    })
     .post(function(req, res) {
 
         var product = new Product(req.body);
@@ -32,17 +38,7 @@ router.route('/product/:productId?')
             if (err)
                 throw err;
 
-            res.redirect('/product/' + product._id);
-        });
-    })
-    .get(function(req, res) {
-        Product.findById(req.params.productId, function(err, product) {
-            if (err)
-                throw err;
-
-            res.render('front/product', {
-                product: product
-            });
+            res.redirect('/products/' + product._id);
         });
     })
     .delete(function(req, res) {
