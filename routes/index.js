@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', {
+    res.render('front/index', {
         title: 'Express'
     });
 });
@@ -16,7 +16,7 @@ router.get('/products', function(req, res) {
         if (err)
             throw err;
 
-        res.render('index', {
+        res.render('front/index', {
             products: products
         });
     });
@@ -40,7 +40,7 @@ router.route('/product/:productId?')
             if (err)
                 throw err;
 
-            res.render('product', {
+            res.render('front/product', {
                 product: product
             });
         });

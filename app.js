@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var exphbs = require('express-handlebars');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -14,6 +14,13 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// Set up handlebars to use frontend layoutfile
+app.engine('.hbs', exphbs({
+    defaultLayout: './front/layout',
+    extname: '.hbs',
+    layoutsDir: "views"
+}));
 
 // connect to mongo
 mongoose.connect('mongodb://localhost:27017/smusmy');
