@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById('deleteCrib').addEventListener('click', function() {
-        deleteCrib(this.dataset.id);
+  document.getElementById('deleteProduct').addEventListener('click', function() {
+    deleteProduct(this.dataset.id);
 
+  });
+
+  function deleteProduct(productPath) {
+    $.ajax({
+      url: '/products/' + productPath,
+      type: 'delete',
     });
-
-    function deleteCrib(id) {
-        $.ajax({
-            url: '/crib/' + id,
-            type: 'delete',
-        });
-    }
+  }
 
 
 });
+
